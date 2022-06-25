@@ -44,6 +44,6 @@ Compartilhe sua paixão!
 
 Extras:
 
-- Fazer testes unitários das funcionalidades
-- Criar frontend para a página de home do Iboox
-- Criar email marketing para confirmação de request
+- [ ] Fazer testes unitários das funcionalidades
+- [ ] Criar frontend para a página de home do Iboox
+- [ ] Criar email marketing para confirmação de request
