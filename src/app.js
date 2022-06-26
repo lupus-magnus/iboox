@@ -1,7 +1,15 @@
+import "dotenv/config";
 import express from "express";
 import chalk from "chalk";
 
-import "dotenv/config";
+import db from "./config/database.js";
+
+db.on("error", console.log.bind(console, "Erro de conexão"));
+db.once("open", () => {
+  console.log(
+    `\n✅ The ${chalk.blue("database connection")} was successfully stablished!`
+  );
+});
 
 import { booksRoutes } from "./routes/books.routes.js";
 import { requestsRoutes } from "./routes/requests.routes.js";

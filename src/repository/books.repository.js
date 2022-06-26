@@ -1,6 +1,6 @@
 import { getFileAsObject, writeJsonFile } from "../../temp/utils.js";
 
-import { Book } from "../model/Book.js";
+import { Book, Books } from "../model/Book.js";
 
 // type BookRepository = {
 //   list: () => Book[]
@@ -11,33 +11,35 @@ import { Book } from "../model/Book.js";
 const dataPath = "src/config/fixtures/books.json";
 
 export class BookRepository {
-  static list = () => {
-    const books = getFileAsObject(dataPath);
-    const booksSummary = books.map(({ book_title, id }) => ({
-      book_title,
-      id,
-    }));
-
-    return booksSummary;
+  static list = async () => {
+    return new Promise(async (resolve) => {
+      const results = await Books.find({}, (err, queryResults) => {
+        if (err) console.log(err);
+        resolve(queryResults);
+      });
+    });
   };
 
-  static getBookById = (id) => {
-    const books = getFileAsObject(dataPath);
-    const book = books.find((book) => book.id == id);
-    return book;
+  static getBookById = async (id) => {
+    return new Promise(async (resolve) => {
+      const result = await Books.findById(id);
+      resolve(result);
+    });
   };
 
-  static createBook = (newBook) => {
-    const { author, title } = newBook;
-    const db = getFileAsObject(dataPath);
+  static createBook = async (newBook) => {
+    const { author, book_title } = newBook;
+    const book = new Books({ author, book_title });
 
-    try {
-      const book = new Book(title, author);
-      db.push(book);
-      writeJsonFile(dataPath, db);
-      return book;
-    } catch {
-      throw new Error("Unable to create book");
-    }
+    return new Promise(async (resolve) => {
+      await book.save((err) => {
+        if (err) {
+          console.log({ err });
+          throw new Error("Unable to create book");
+        } else {
+          resolve(book);
+        }
+      });
+    });
   };
 }
