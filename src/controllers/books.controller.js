@@ -1,14 +1,15 @@
 import { BookRepository } from "../repository/books.repository.js";
 
 export class BookController {
-  static list = (req, res) => {
-    const books = BookRepository.list();
+  static list = async (req, res) => {
+    const books = await BookRepository.list();
+    console.log({ books });
     return res.status(200).json(books);
   };
 
-  static getBook = (req, res) => {
+  static getBook = async (req, res) => {
     const { id } = req.params;
-    const book = BookRepository.getBookById(id);
+    const book = await BookRepository.getBookById(id);
 
     if (book) {
       return res.status(200).json(book);
@@ -17,13 +18,13 @@ export class BookController {
     }
   };
 
-  static postBook = (req, res) => {
-    const { title, author } = req.body;
+  static postBook = async (req, res) => {
+    const { book_title, author } = req.body;
     try {
-      const newBook = BookRepository.createBook({ title, author });
+      const newBook = await BookRepository.createBook({ book_title, author });
       return res.status(201).json(newBook);
     } catch {
-      return res.status(500).json({ message: "Unable to create book." });
+      return res.status(400).json({ message: "Unable to create book." });
     }
   };
 }

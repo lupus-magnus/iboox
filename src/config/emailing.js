@@ -3,8 +3,6 @@ import nodemailer from "nodemailer";
 const EMAIL = process.env.EMAIL_ACC;
 const PWD = process.env.EMAIL_PWD;
 
-console.log({ EMAIL, PWD });
-
 export const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
