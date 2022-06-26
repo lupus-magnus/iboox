@@ -1,6 +1,8 @@
 import express from "express";
 import chalk from "chalk";
 
+import "dotenv/config";
+
 import { booksRoutes } from "./routes/books.routes.js";
 import { requestsRoutes } from "./routes/requests.routes.js";
 
