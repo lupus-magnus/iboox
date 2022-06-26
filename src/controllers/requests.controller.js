@@ -1,4 +1,5 @@
 import { Request } from "../model/Request.js";
+import { EmailService } from "../services/email.service.js";
 
 export class RequestController {
   static post = (req, res) => {
@@ -10,6 +11,8 @@ export class RequestController {
         });
       }
       const request = new Request(email, wishlist);
+      EmailService.requestMail({ targetEmail: request.email, wishlist });
+
       return res.status(201).json({
         message: `You request was successfully received.`,
         request,
