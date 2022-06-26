@@ -3,7 +3,6 @@ import { BookRepository } from "../repository/books.repository.js";
 export class BookController {
   static list = async (req, res) => {
     const books = await BookRepository.list();
-    console.log({ books });
     return res.status(200).json(books);
   };
 

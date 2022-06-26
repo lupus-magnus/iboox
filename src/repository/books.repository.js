@@ -13,10 +13,14 @@ const dataPath = "src/config/fixtures/books.json";
 export class BookRepository {
   static list = async () => {
     return new Promise(async (resolve) => {
-      const results = await Books.find({}, (err, queryResults) => {
-        if (err) console.log(err);
-        resolve(queryResults);
-      });
+      const results = await Books.find(
+        {},
+        (err, queryResults) => {
+          if (err) console.log(err);
+          resolve(queryResults);
+        },
+        { book_title: 1 }
+      ).projection({ book_title: 1 });
     });
   };
 

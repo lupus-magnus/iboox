@@ -22,5 +22,6 @@ Compartilhe sua paixão!
 #### 🔥 Extras:
 
 - [ ] Fazer testes unitários das funcionalidades
+- [ ] Fazer documentação da API com o Swagger
 - [ ] Criar frontend para a página de home do Iboox
 - [ ] Enviar email marketing estilizado ao fazer um pedido
