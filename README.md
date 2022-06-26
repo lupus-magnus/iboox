@@ -17,8 +17,10 @@ Compartilhe sua paixão!
 - [x] POST /request - Enviar pedido formal contendo o e-mail de quem pede e o array de livros desejados.
 - [x] Usar modelo MVC: model, controller, services
 - [ ] Usar o MongoDB com Mongoose para persistência de dados
+- [ ] Integrar com serviço de emails
 
 #### 🔥 Extras:
 
 - [ ] Fazer testes unitários das funcionalidades
 - [ ] Criar frontend para a página de home do Iboox
+- [ ] Enviar email marketing estilizado ao fazer um pedido
