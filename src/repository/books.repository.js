@@ -26,7 +26,7 @@ export class BookRepository {
 
   static getBookById = async (id) => {
     return new Promise(async (resolve) => {
-      const result = await Books.findById(id);
+      const result = await Books.findById(id).lean();
       resolve(result);
     });
   };
