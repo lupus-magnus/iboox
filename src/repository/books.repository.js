@@ -1,6 +1,4 @@
-import { getFileAsObject, writeJsonFile } from "../../temp/utils.js";
-
-import { Book, Books } from "../model/Book.js";
+import { Books } from "../model/Book.js";
 
 // type BookRepository = {
 //   list: () => Book[]
@@ -25,9 +23,13 @@ export class BookRepository {
   };
 
   static getBookById = async (id) => {
-    return new Promise(async (resolve) => {
-      const result = await Books.findById(id).lean();
-      resolve(result);
+    return new Promise(async (resolve, reject) => {
+      try {
+        const result = await Books.findById(id).lean();
+        resolve(result);
+      } catch {
+        reject();
+      }
     });
   };
 
