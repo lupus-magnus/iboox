@@ -3,15 +3,7 @@ import { BookRepository } from "../repository/books.repository.js";
 import { transporter, requestEmailPayload } from "../config/emailing.js";
 
 export class EmailService {
-  static requestMail = async ({ targetEmail, wishlist, name }) => {
-    // Get objects for each wishlist
-    const requests = await Promise.all(
-      wishlist.map(async (id) => {
-        const book = await BookRepository.getBookById(id);
-        return book;
-      })
-    );
-
+  static requestMail = async ({ targetEmail, requests, name }) => {
     transporter
       .sendMail({
         to: targetEmail,

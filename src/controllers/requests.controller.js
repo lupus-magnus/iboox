@@ -1,26 +1,28 @@
 import { Request } from "../model/Request.js";
 import { EmailService } from "../services/email.service.js";
+import { RequestService } from "../services/request.service.js";
 
 export class RequestController {
-  static post = (req, res) => {
+  static post = async (req, res) => {
     const { email, wishlist, name } = req.body;
+
     try {
-      if (!email || !wishlist) {
-        return res.status(400).json({
-          message: "Bad request.",
-        });
-      }
-      const request = new Request(email, wishlist);
-      EmailService.requestMail({ targetEmail: request.email, wishlist, name });
+      await RequestService.execute({ email, wishlist, name });
 
       return res.status(201).json({
         message: `You request was successfully received.`,
-        request,
+        request: wishlist,
       });
-    } catch {
-      return res.status(500).json({
-        message: "Could not proccess the request.",
-      });
+    } catch (err) {
+      if (err.code === "bad.request") {
+        return res.status(400).json({
+          message: "Bad request.",
+        });
+      } else if (err.code === "not.found") {
+        return res.status(404).json({
+          message: "One or more of the requested books are out of stock.",
+        });
+      }
     }
   };
 }
