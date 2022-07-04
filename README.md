@@ -23,6 +23,18 @@ Iboox is a side-project developed for gaining experience with the NodeJS and Exp
 - [x] Develop the frontend for /home and email marketing on code.
 - [x] Use the MVC model for maintaining good code practices.
 
+
+### 🧰  Technologies:
+
+- NodeJS
+- ExpressJS
+- Nodemailer
+- Mongoose
+- MongoDB
+- JavaScript
+- HTML
+- CSS
+
 ### 🎯 Endpoints:
 
 - [x] GET /books - List all books available.
