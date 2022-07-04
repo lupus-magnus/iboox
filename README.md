@@ -18,7 +18,7 @@ Iboox is a side-project developed for gaining experience with the NodeJS and Exp
 ### 🧠 Project Responsabilities:
 
 - [x] Persist application data in a NOSQL database (MongoDB).
-- [x] Configure email service on Nodejs
+- [x] Configure email service on NodeJS
 - [x] Design /home and email marketing on Figma
 - [x] Develop the frontend for /home and email marketing on code.
 - [x] Use the MVC model for maintaining good code practices.
@@ -47,4 +47,4 @@ Iboox is a side-project developed for gaining experience with the NodeJS and Exp
 - [ ] Implementation of unit tests for each endpoint.
 - [ ] Create a meaningful API documentation in Swagger.
 - [x] Design and develop a frontend for the homepage.
-- [x] Create email marketing for when a request is received.
+- [x] Design and develop email marketing for confirming book requests.
