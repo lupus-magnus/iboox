@@ -1,27 +1,31 @@
-<h1 align="center">📚 Iboox | Compartilhe a sua paixão</h1>
+<h1 align="center">📚 Iboox | Share your passion</h1>
 
 <h2 align="center" >
-<img src="https://user-images.githubusercontent.com/71194923/175789900-43524bcb-7dc5-41fb-8d0f-879b59daa6c1.png" width="600" />
+<img src="https://user-images.githubusercontent.com/71194923/177198362-3159dfb4-ab0d-4a79-97f8-b03ff0f6b0a7.png" width="600" />
 </h2>
 <hr />
+Iboox is the largest book exchanging platform on the market. Thousands of people are already receiving and donating for free their used books among them. It is a win-win for everyone!
 
-A Iboox é a maior plataforma de doações de livros que existe! Milhares de pessoas do mundo todo já enviam e recebem gratuitamente livros umas das outras. Todo mundo sai ganhando.
+Share your passion!
 
-Compartilhe sua paixão!
+### 🧠 Project Responsabilities:
 
-### 🎯 Objetivos:
+- [x] Persist application data in a NOSQL database (MongoDB).
+- [x] Configure email service on Nodejs
+- [x] Design /home and email marketing on Figma
+- [x] Develop the frontend for /home and email marketing on code.
+- [x] Use the MVC model for maintaining good code practices.
 
-- [x] GET /books - Listar os livros disponíveis
-- [x] POST /books - Postar um livro novo, com o modelo estabelecido
-- [x] GET /books/:id - Pegar detalhes de um único livro
-- [x] POST /request - Enviar pedido formal contendo o e-mail de quem pede e o array de livros desejados.
-- [x] Usar modelo MVC: model, controller, services
-- [x] Usar o MongoDB com Mongoose para persistência de dados
-- [x] Integrar com serviço de emails
+### 🎯 Endpoints:
 
-#### 🔥 Extras:
+- [x] GET /books - List all books available.
+- [x] POST /books - Share a new book with our community.
+- [x] GET /books/:id - Get the details from a single book.
+- [x] POST /request - Send a formal book request. It must contain the client name, email and the list of books that he/she wants.
 
-- [ ] Fazer testes unitários das funcionalidades
-- [ ] Fazer documentação da API com o Swagger
-- [ ] Criar frontend para a página de home do Iboox
-- [ ] Enviar email marketing estilizado ao fazer um pedido
+#### 🔥 The Extra Mile:
+
+- [ ] Implementation of unit tests for each endpoint.
+- [ ] Create a meaningful API documentation in Swagger.
+- [x] Design and develop a frontend for the homepage.
+- [x] Create email marketing for when a request is received.
