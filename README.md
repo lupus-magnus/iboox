@@ -4,9 +4,16 @@
 <img src="https://user-images.githubusercontent.com/71194923/177198362-3159dfb4-ab0d-4a79-97f8-b03ff0f6b0a7.png" width="600" />
 </h2>
 <hr />
+
+##### Synopsis:
+
 Iboox is the largest book exchanging platform on the market. Thousands of people are already receiving and donating for free their used books among them. It is a win-win for everyone!
 
 Share your passion!
+
+##### Description:
+
+Iboox is a side-project developed for gaining experience with the NodeJS and ExpressJS ecosystem. It uses code best practices for integrating with a NOSQL database, an email service and CRUD operations. Developed with TypeScript.
 
 ### 🧠 Project Responsabilities:
 
