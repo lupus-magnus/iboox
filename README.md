@@ -1,6 +1,6 @@
 <h1 align="center">📚 Iboox | Share your passion</h1>
 <h1 align="center">
-<img src="https://img.shields.io/static/v1?label=react&message=framework&color=blue&style=for-the-badge&logo=REACT"/>
+<img src="https://img.shields.io/static/v1?label=node&message=framework&color=blue&style=for-the-badge&logo=#339933"/>
 </h1>
 
 
