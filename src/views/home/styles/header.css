@@ -29,3 +29,12 @@ nav > ul {
   display: flex;
   gap: 24px;
 }
+
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+  }
+  nav {
+    display: none;
+  }
+}

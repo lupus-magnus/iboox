@@ -10,3 +10,10 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width: 768px) {
+  footer {
+    font-size: 12px;
+    justify-content: center;
+  }
+}
