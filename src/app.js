@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 
 app.use(express.json());
 app.use("/books", booksRoutes);
-app.use("/request", requestsRoutes);
+app.use("/requests", requestsRoutes);
 
 app.listen(port, () => {
   console.log(
