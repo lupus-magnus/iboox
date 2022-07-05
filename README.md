@@ -5,7 +5,6 @@
   
 </h1>
 
-
 <h2 align="center" >
 <img src="https://user-images.githubusercontent.com/71194923/177198362-3159dfb4-ab0d-4a79-97f8-b03ff0f6b0a7.png" width="600" />
 </h2>
@@ -29,8 +28,7 @@ Iboox is a side-project developed for gaining experience with the NodeJS and Exp
 - [x] Develop the frontend for /home and email marketing on code.
 - [x] Use the MVC model for maintaining good code practices.
 
-
-### 🧰  Technologies:
+### 🧰 Technologies:
 
 - NodeJS
 - ExpressJS
@@ -51,6 +49,6 @@ Iboox is a side-project developed for gaining experience with the NodeJS and Exp
 #### 🔥 The Extra Mile:
 
 - [ ] Implementation of unit tests for each endpoint.
-- [ ] Create a meaningful API documentation in Swagger.
+- [x] Create a meaningful API documentation in Swagger.
 - [x] Design and develop a frontend for the homepage.
 - [x] Design and develop email marketing for confirming book requests.

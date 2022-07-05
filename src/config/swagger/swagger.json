@@ -1,0 +1,277 @@
+{
+  "openapi": "3.0.0",
+
+  "info": {
+    "title": "Iboox API Docs",
+    "version": "1.0.0",
+    "description": "An endpoints guide for the Iboox app"
+  },
+  "basePath": "/",
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "host": "localhost:8001",
+  "schemes": ["http", "https"],
+  "tags": [
+    {
+      "name": "General",
+      "description": "General endpoints from the application"
+    },
+    { "name": "Books", "description": "Book related endpoints" },
+    { "name": "Requests", "description": "Request related endpoints" }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": ["General"],
+        "description": "Homepage of the application",
+        "summary": "Homepage of the application",
+        "responses": {
+          "200": {
+            "description": "Homepage of the application",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/docs": {
+      "get": {
+        "tags": ["General"],
+        "description": "Iboox API Docs",
+        "summary": "Iboox API Docs",
+        "responses": {
+          "200": {
+            "description": "Iboox API Docs",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/books": {
+      "get": {
+        "tags": ["Books"],
+        "description": "List all books available.",
+        "summary": "List all books available.",
+        "responses": {
+          "200": {
+            "description": "List all books available.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "properties": {
+                    "_id": {
+                      "type": "string"
+                    },
+                    "book_title": {
+                      "type": "string"
+                    }
+                  },
+                  "example": [
+                    {
+                      "_id": "62b8b3e5551f323281b738db",
+                      "book_title": "Harry Potter and the Philosopher's Stone"
+                    },
+                    {
+                      "_id": "62b8cede868a70125dc0169f",
+                      "book_title": "O Alquimista"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Books"],
+        "description": "Share a new book with our community.",
+        "summary": "Share a new book with our community.",
+        "responses": {
+          "201": {
+            "description": "Successful book creation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string"
+                    },
+                    "book_title": {
+                      "type": "string"
+                    },
+                    "author": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "string"
+                    }
+                  },
+                  "example": {
+                    "_id": "62b8b3e5551f323281b738db",
+                    "book_title": "Harry Potter and the Philosopher's Stone",
+                    "author": "J.K. Rowling",
+                    "image": "https://images-na.ssl-images-amazon.com/images/I/51SkIDTd9rL._SX323_BO1,204,203,200_.jpg"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/books/:id": {
+      "get": {
+        "tags": ["Books"],
+        "description": "Get the details from a specific book.",
+        "summary": "Get the details from a specific book.",
+        "responses": {
+          "200": {
+            "description": "Successful retrieving book data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string"
+                    },
+                    "book_title": {
+                      "type": "string"
+                    },
+                    "author": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "string"
+                    }
+                  },
+                  "example": {
+                    "_id": "62b8b3e5551f323281b738db",
+                    "book_title": "Harry Potter and the Philosopher's Stone",
+                    "author": "J.K. Rowling",
+                    "image": "https://images-na.ssl-images-amazon.com/images/I/51SkIDTd9rL._SX323_BO1,204,203,200_.jpg"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Book not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/requests": {
+      "post": {
+        "tags": ["Requests"],
+        "description": "Post a request for a list of books",
+        "summary": "Post a request for a list of books",
+        "responses": {
+          "201": {
+            "description": "Successful book request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "wishlist": {
+                      "type": "array"
+                    }
+                  },
+                  "example": {
+                    "message": "You request was successfully received.",
+                    "request": [
+                      "62b8b3e5551f323281b738db",
+                      "62b8d9279beaf7099376d7a9"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Book not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "example": {
+                    "message": "One or more of the requested books are out of stock."
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "example": {
+                    "message": "Bad request."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

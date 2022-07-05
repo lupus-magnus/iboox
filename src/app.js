@@ -4,6 +4,11 @@ import chalk from "chalk";
 import { fileURLToPath } from "url";
 import path, { dirname } from "path";
 
+import swaggerUi from "swagger-ui-express";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const swaggerConfig = require("./config/swagger/swagger.json");
+
 import db from "./config/database.js";
 
 db.on("error", console.log.bind(console, "Erro de conexão"));
@@ -32,7 +37,8 @@ app.get("/", (req, res) => {
 
 app.use(express.json());
 app.use("/books", booksRoutes);
-app.use("/request", requestsRoutes);
+app.use("/requests", requestsRoutes);
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerConfig));
 
 app.listen(port, () => {
   console.log(
