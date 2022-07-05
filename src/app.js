@@ -25,7 +25,7 @@ const __dirname = dirname(__filename);
 import { booksRoutes } from "./routes/books.routes.js";
 import { requestsRoutes } from "./routes/requests.routes.js";
 
-const port = 8001;
+const PORT = process.env.PORT || 8001;
 
 const app = express();
 
@@ -40,10 +40,10 @@ app.use("/books", booksRoutes);
 app.use("/requests", requestsRoutes);
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerConfig));
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(
     `\n\n🚀 Server is ${chalk.green("running")} at ${chalk.inverse(
-      `http://localhost:${port}/\n\n`
+      `http://localhost:${PORT}/\n\n`
     )}🐺 Good hacking!`
   );
 });
