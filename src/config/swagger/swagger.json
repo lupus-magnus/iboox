@@ -100,6 +100,37 @@
         "tags": ["Books"],
         "description": "Share a new book with our community.",
         "summary": "Share a new book with our community.",
+        "requestBody": {
+          "description": "Share a new book with our community.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "book_title": {
+                    "type": "string",
+                    "example": "The Hobbit",
+                    "required": true
+                  },
+                  "author": {
+                    "type": "string",
+                    "example": "J. R. R. Tolkien ",
+                    "required": true
+                  }
+                }
+              }
+            },
+            "*/*": {
+              "examples": {
+                "user": {
+                  "summary": "User example in other format",
+                  "externalValue": "http://foo.bar/examples/user-example.whatever"
+                }
+              }
+            }
+          }
+        },
+
         "responses": {
           "201": {
             "description": "Successful book creation.",
