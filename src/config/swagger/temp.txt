@@ -1,0 +1,42 @@
+// "parameters": [
+        //   {
+        //     "in": "body",
+        //     "name": "body",
+        //     "description": "Payload for adding a new book to the database",
+        //     "schema": {
+        //       "type": "object",
+        //       "properties": {
+        //         "book_title": {
+        //           "type": "string",
+        //           "example": "The Hobbit",
+        //           "required": true
+        //         },
+        //         "author": {
+        //           "type": "string",
+        //           "example": "J. R. R. Tolkien ",
+        //           "required": true
+        //         }
+        //       }
+        //     },
+        //     "requestBody": {
+        //       "required": true,
+        //       "content": "application/json",
+
+        //       "schema": {
+        //         "type": "object",
+        //         "properties": {
+        //           "book_title": {
+        //             "type": "string",
+        //             "example": "The Hobbit",
+        //             "required": true
+        //           },
+        //           "author": {
+        //             "type": "string",
+        //             "example": "J. R. R. Tolkien ",
+        //             "required": true
+        //           }
+        //         }
+        //       }
+        //     }
+        //   }
+        // ],

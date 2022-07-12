@@ -48,7 +48,6 @@ Iboox is a side-project developed for gaining experience with the NodeJS and Exp
 
 #### 🔥 The Extra Mile:
 
-- [ ] Implementation of unit tests for each endpoint.
 - [x] Create a meaningful API documentation in Swagger.
 - [x] Design and develop a frontend for the homepage.
 - [x] Design and develop email marketing for confirming book requests.

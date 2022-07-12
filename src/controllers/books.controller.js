@@ -1,4 +1,5 @@
 import { BookRepository } from "../repository/books.repository.js";
+import { PostBookService } from "../services/postBook.service.js";
 
 export class BookController {
   static list = async (req, res) => {
@@ -20,10 +21,15 @@ export class BookController {
   static postBook = async (req, res) => {
     const { book_title, author } = req.body;
     try {
-      const newBook = await BookRepository.createBook({ book_title, author });
+      const newBook = await PostBookService.execute({ book_title, author });
       return res.status(201).json(newBook);
-    } catch {
-      return res.status(400).json({ message: "Unable to create book." });
+    } catch (err) {
+      return err.code === "bad.request"
+        ? res.status(400).json({ message: "Unable to create book." })
+        : res.status(500).json({
+            message:
+              "Operation could not be performed. Please, try again later.",
+          });
     }
   };
 }
