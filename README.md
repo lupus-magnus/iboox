@@ -45,15 +45,17 @@ Iboox is a side-project developed for gaining experience with the NodeJS and Exp
 - Mongoose
 - MongoDB
 - JavaScript
+- Handlebars
 - HTML
 - CSS
+
 
 ### 🎯 Endpoints:
 
 - [x] GET /books - List all books available.
 - [x] POST /books - Share a new book with our community.
 - [x] GET /books/:id - Get the details from a single book.
-- [x] POST /request - Send a formal book request. It must contain the client name, email and the list of books that he/she wants.
+- [x] POST /request - Send a formal book request. It must contain the client name, email and the list of books that he/she wants. (After that, you will receive an awesome email marketing! Check it out!)
 
 #### 🔥 The Extra Mile:
 
