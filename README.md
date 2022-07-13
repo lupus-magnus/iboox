@@ -20,6 +20,15 @@ Share your passion!
 
 Iboox is a side-project developed for gaining experience with the NodeJS and ExpressJS ecosystem. It uses code best practices for integrating with a NOSQL database, an email service and CRUD operations. Developed with TypeScript.
 
+<br><br>
+
+##### Want to check it out by yourself?
+
+<h2 align="center" >
+<a href="https://iboox.herokuapp.com/"><img src="https://media.indiedb.com/images/articles/1/159/158317/auto/20140509082052-Button_play.png" height="64" />
+</h2></a>
+<hr />
+
 ### 🧠 Project Responsabilities:
 
 - [x] Persist application data in a NOSQL database (MongoDB).
