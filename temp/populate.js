@@ -8,8 +8,6 @@ import { Books } from "../src/model/Book.js";
 const USER = process.env.ATLAS_USER;
 const PWD = process.env.ATLAS_PWD;
 
-console.log({ USER, PWD });
-
 mongoose.connect(
   `mongodb+srv://${USER}:${PWD}@ibooxcluster.7wo1y.mongodb.net/iboox`
 );
