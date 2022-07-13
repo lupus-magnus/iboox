@@ -18,7 +18,7 @@ Share your passion!
 
 ##### Description:
 
-Iboox is a side-project developed for gaining experience with the NodeJS and ExpressJS ecosystem. It uses code best practices for integrating with a NOSQL database, an email service and CRUD operations. Developed with TypeScript.
+Iboox is a side-project developed for gaining experience with the NodeJS and ExpressJS ecosystem. It uses code best practices for integrating with a NOSQL database in the cloud, an email service and CRUD operations.
 
 <br><br>
 
