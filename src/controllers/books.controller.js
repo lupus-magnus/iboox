@@ -2,18 +2,17 @@ import { BookRepository } from "../repository/books.repository.js";
 import { PostBookService } from "../services/postBook.service.js";
 
 export class BookController {
-  static list = async (req, res) => {
+  static list = async (_, res) => {
     const books = await BookRepository.list();
     return res.status(200).json(books);
   };
 
   static getBook = async (req, res) => {
     const { id } = req.params;
-    const book = await BookRepository.getBookById(id);
-
-    if (book) {
+    try {
+      const book = await BookRepository.getBookById(id);
       return res.status(200).json(book);
-    } else {
+    } catch {
       return res.status(404).json({ message: "Book was not found." });
     }
   };

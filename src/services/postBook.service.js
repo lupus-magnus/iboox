@@ -3,7 +3,6 @@ import { throwBadRequestError } from "../config/errors.js";
 
 export class PostBookService {
   static execute = async ({ book_title, author }) => {
-    console.log("Received in PostBookService:", { book_title, author });
     if (!book_title || !author) {
       throwBadRequestError();
     }

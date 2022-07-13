@@ -10,7 +10,8 @@ export class RequestController {
       await RequestService.execute({ email, wishlist, name });
 
       return res.status(201).json({
-        message: `You request was successfully received.`,
+        message: `Your request was successfully received.`,
+        client: name,
         request: wishlist,
       });
     } catch (err) {

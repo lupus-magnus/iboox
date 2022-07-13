@@ -5,7 +5,6 @@ import hbs from "nodemailer-express-handlebars";
 
 const EMAIL = process.env.EMAIL_ACC;
 const PWD = process.env.EMAIL_PWD;
-console.log({ EMAIL, PWD });
 
 (async function () {
   const transporter = nodemailer.createTransport({

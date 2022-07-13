@@ -1,42 +1,68 @@
-// "parameters": [
-        //   {
-        //     "in": "body",
-        //     "name": "body",
-        //     "description": "Payload for adding a new book to the database",
-        //     "schema": {
-        //       "type": "object",
-        //       "properties": {
-        //         "book_title": {
-        //           "type": "string",
-        //           "example": "The Hobbit",
-        //           "required": true
-        //         },
-        //         "author": {
-        //           "type": "string",
-        //           "example": "J. R. R. Tolkien ",
-        //           "required": true
-        //         }
-        //       }
-        //     },
-        //     "requestBody": {
-        //       "required": true,
-        //       "content": "application/json",
+OLD /REQUESTS POST
 
-        //       "schema": {
-        //         "type": "object",
-        //         "properties": {
-        //           "book_title": {
-        //             "type": "string",
-        //             "example": "The Hobbit",
-        //             "required": true
-        //           },
-        //           "author": {
-        //             "type": "string",
-        //             "example": "J. R. R. Tolkien ",
-        //             "required": true
-        //           }
-        //         }
-        //       }
-        //     }
-        //   }
-        // ],
+"post": {
+        "tags": ["Requests"],
+        "description": "Post a request for a list of books",
+        "summary": "Post a request for a list of books",
+        "responses": {
+          "201": {
+            "description": "Successful book request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "wishlist": {
+                      "type": "array"
+                    }
+                  },
+                  "example": {
+    "name": "Dominic",
+    "email": "noxinod318@kahase.com",
+    "wishlist": ["62b8b3e5551f323281b738db", "62b8d9279beaf7099376d7a9"]
+}
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Book not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "example": {
+                    "message": "One or more of the requested books are out of stock."
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "example": {
+                    "message": "Bad request."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }

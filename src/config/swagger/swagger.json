@@ -180,7 +180,19 @@
         }
       }
     },
-    "/books/:id": {
+    "/books/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "Book unique id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "style": "simple"
+        }
+      ],
       "get": {
         "tags": ["Books"],
         "description": "Get the details from a specific book.",
@@ -237,8 +249,40 @@
     "/requests": {
       "post": {
         "tags": ["Requests"],
-        "description": "Post a request for a list of books",
-        "summary": "Post a request for a list of books",
+        "description": "This is your chance to see my email marketing! 😉 ",
+        "summary": "Make a request for one or more books.",
+        "requestBody": {
+          "description": "I hope you like it. 👊",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "John",
+                    "required": true
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "johndoe@example.com",
+                    "required": true
+                  },
+
+                  "wishlist": {
+                    "type": "array",
+                    "example": [
+                      "62b8b3e5551f323281b738db",
+                      "62b8d9279beaf7099376d7a9"
+                    ],
+                    "required": true
+                  }
+                }
+              }
+            }
+          }
+        },
+
         "responses": {
           "201": {
             "description": "Successful book request",
@@ -255,7 +299,8 @@
                     }
                   },
                   "example": {
-                    "message": "You request was successfully received.",
+                    "message": "Your request was successfully received.",
+                    "client": "John Doe",
                     "request": [
                       "62b8b3e5551f323281b738db",
                       "62b8d9279beaf7099376d7a9"
